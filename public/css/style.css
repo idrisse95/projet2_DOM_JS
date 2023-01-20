@@ -1,45 +1,106 @@
-body {
-  background-color: #47065b;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-#jeux {
-  width: 100%;
+body {
+  margin: 20px 0;
+  background: #6589F9;
+}
+
+.grid {
+  width: 500px;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
-  height: 90vh;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex-direction: row-reverse;
 }
 
 .card {
   position: relative;
-  width: 100px;
-  height: 200px;
-  background-color: #ffffff;
-  padding: 5px;
-  border-radius: 20px;
-  margin: 10px;
-  transition: 1s;
+  transition: all 0.4s linear;
+  transform-style: preserve-3d;
+  margin: 5px;
 }
-.card div {
-  z-index: -999;
-  transform: rotateY(180deg);
+
+.card, .back, .front {
+  height: 150px;
+  width: 150px;
+}
+
+.back, .front {
   position: absolute;
-  border-radius: 20px;
-  background: url(../public/img/img1.png);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.front {
+  z-index: 2;
+  background: #FAB942;
+}
+
+.back {
+  transform: rotateY(180deg);
+  background-color: #6589F9;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.selected {
+  transform: rotateY(180deg);
+}
+
+.match .front {
+  background: #6589F9 !important;
+}
+
+#game {
+  display: block;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#acceuil {
+  position: relative;
   width: 100%;
-  height: 100%;
-  transition: 1s;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#acceuil li {
+  margin-top: 100px;
+}
+#acceuil li:first-child {
+  font-size: 45px;
+}
+
+#facile {
+  text-align: center;
   font-size: 30px;
-  color: #1bfff0;
+  position: absolute;
+  top: 20%;
+  left: 33%;
 }
 
-#ligne1 {
-  display: flex;
+.ouvrir {
+  transform: translateX(0%);
+  transition: 1s;
 }
 
-#ligne2 {
-  display: flex;
+.fermer {
+  transform: translateX(250%);
+  transition: 1s;
 }
 
-#non {
-  display: none;
+body {
+  overflow: hidden;
 }
