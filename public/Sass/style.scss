@@ -1,0 +1,50 @@
+body{
+    background-color: #47065b;
+}
+
+#jeux{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 90vh;
+}
+
+
+.card{
+    position: relative;
+    width: 100px;
+    height: 200px;
+    background-color:#ffffff;
+    padding: 5px;
+    border-radius: 20px;
+    margin: 10px;
+    transition: 1s;
+   
+   
+    div{
+        z-index: -999;
+        transform: rotateY(180deg);
+        position: absolute;
+        border-radius: 20px;
+        background:url(../public/img/img1.png);
+        width: 100%;
+        height: 100%;
+        transition: 1s;
+        font-size: 30px;
+        color: #1bfff0;
+      
+        }
+    }
+
+
+#ligne1{
+    display: flex;
+    }
+
+#ligne2{
+    display: flex;}
+
+
+#non{
+    display: none;
+}
