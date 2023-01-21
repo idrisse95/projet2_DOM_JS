@@ -1,59 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./public/css/style.css">
-
-</head>
-
-<body>
-
-    <section id="jeux">
-        <div id="carteDuJeux">
-        <div id="ligne1">
-            <div class="card cd1">
-                <div><img alt=""></div>
-            </div>
-            <div class="card cd2">
-                <div><img alt=""></div>
-            </div>
-            <div class="card cd1">
-                <div><img alt=""></div>
-            </div>
-        </div>
-        <div id="ligne2">
-            <div class="card cd3">
-                <div><img alt=""></div>
-            </div>
-            <div class="card cd2">
-                <div><img alt=""></div>
-            </div>
-            <div class="card cd3">
-                <div><img alt=""></div>
-            </div>
-        </div>
-    </div>
-    </section>
-
-     <section class="container">
-        <div id="resultat"></div>
-
-    </section> -->
-
-
-
-
-<!-- <script src="./public/js/main.js"></script>
- </body>
-
-</html>  -->
-
-
-
 <!doctype html>
 <html lang="en">
 
@@ -65,191 +9,285 @@
     <title>Memory Game</title>
 
     <link rel="stylesheet" href="./public/css/style.css">
- 
+
 
 </head>
 
 <body>
 
-    <!-- <section id="acceuil">
+    <section id="total">
         <div>
-            <ul>
-                <li>Bonjour Bienvenu Sur Mon Jeux Top du Top</li>
+            <section id="acceuil">
+                <div>
+                    <ul>
+                        <li>Bonjour Bienvenu Sur Mon Jeux Top du Top</li>
 
-                <li></li>
+                        <li>Entre un pseudo</li>
 
-                <li><input id="inputPseudo" type="text"> <button id="chekInput">Chekkk</button></li>
+                        <li><input id="inputPseudo" type="text"> <button id="chekInput">Chekkk</button></li>
+                     
 
-                <li id="score"></li>
+                        <li id="score"></li>
 
-                <li>Choisir un niveau</li>
-                
-                <li><button id="facileB">Facile</button><button id="moyenB">Moyen</button><button
-                        id="difficileB">Difficile</button></li>
-            </ul>
+
+
+
+                    </ul>
+                </div>
+            </section>
+
+            <section id="niveau" class="position fermer">
+                <div>
+                    <div>
+                        <h2>Choisi Ton Niveau Boy</h2>
+                    </div>
+                    <div class="contenuNiveau">
+                        <div id="faci">Moyen</div>
+                        <div id="diff">Diffile</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="point">
+                <div>
+                    <div>
+                        <ul>
+                            <li id="pseudoKr">Pseudo:</li>
+                            <li id="pointKr">Point:</li>
+                            <li>Coups:</li>
+                        </ul>
+                    </div>
+                    <div id="Times">Temps Restant:</div>
+                </div>
+            </section>
+
+            <section id="terrain2" class="position2 fermer">
+                <ul id="cards">
+                    <li class="card">
+                        <div class="view front-view">
+                            <i class="icon">face</i>
+                        </div>
+
+                        <div class="view back-view">
+                            <img src="./public/img/img2/img1.png" alt="card-img">
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="view front-view">
+                            <i class="icon">face</i>
+                        </div>
+
+                        <div class="view back-view">
+                            <img src="./public/img/img2/img2.png" alt="card-img">
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="view front-view">
+                            <i class="icon">face</i>
+                        </div>
+
+                        <div class="view back-view">
+                            <img src="./public/img/img2/img3.png" alt="card-img">
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="view front-view">
+                            <i class="icon">face</i>
+                        </div>
+
+                        <div class="view back-view">
+                            <img src="./public/img/img2/img4.png" alt="card-img">
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="view front-view">
+                            <i class="icon">face</i>
+                        </div>
+
+                        <div class="view back-view">
+                            <img src="./public/img/img2/img1.png" alt="card-img">
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="view front-view">
+                            <i class="icon">face</i>
+                        </div>
+
+                        <div class="view back-view">
+                            <img src="./public/img/img2/img2.png" alt="card-img">
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="view front-view">
+                            <i class="icon">face</i>
+                        </div>
+
+                        <div class="view back-view">
+                            <img src="./public/img/img2/img3.png" alt="card-img">
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="view front-view">
+                            <i class="icon">face</i>
+                        </div>
+
+                        <div class="view back-view">
+                            <img src="./public/img/img2/img4.png" alt="card-img">
+                        </div>
+                    </li>
+
+                </ul>
+            </section>
+
+            <section id="terrain" class="position3 fermer">
+                <ul id="cards">
+                    <li class="card">
+                        <div class="view front-view">
+                            <i class="icon">face</i>
+                        </div>
+
+                        <div class="view back-view">
+                            <img src="./public/img/img1.png" alt="card-img">
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="view front-view">
+                            <i class="icon">face</i>
+                        </div>
+
+                        <div class="view back-view">
+                            <img src="./public/img/img2.png" alt="card-img">
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="view front-view">
+                            <i class="icon">face</i>
+                        </div>
+
+                        <div class="view back-view">
+                            <img src="./public/img/img3.png" alt="card-img">
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="view front-view">
+                            <i class="icon">face</i>
+                        </div>
+
+                        <div class="view back-view">
+                            <img src="./public/img/img4.png" alt="card-img">
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="view front-view">
+                            <i class="icon">face</i>
+                        </div>
+
+                        <div class="view back-view">
+                            <img src="./public/img/img5.png" alt="card-img">
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="view front-view">
+                            <i class="icon">face</i>
+                        </div>
+
+                        <div class="view back-view">
+                            <img src="./public/img/img6.png" alt="card-img">
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="view front-view">
+                            <i class="icon">face</i>
+                        </div>
+
+                        <div class="view back-view">
+                            <img src="./public/img/img7.png" alt="card-img">
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="view front-view">
+                            <i class="icon">face</i>
+                        </div>
+
+                        <div class="view back-view">
+                            <img src="./public/img/img8.png" alt="card-img">
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="view front-view">
+                            <i class="icon">face</i>
+                        </div>
+
+                        <div class="view back-view">
+                            <img src="./public/img/img2.png" alt="card-img">
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="view front-view">
+                            <i class="icon">face</i>
+                        </div>
+
+                        <div class="view back-view">
+                            <img src="./public/img/img1.png" alt="card-img">
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="view front-view">
+                            <i class="icon">face</i>
+                        </div>
+
+                        <div class="view back-view">
+                            <img src="./public/img/img3.png" alt="card-img">
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="view front-view">
+                            <i class="icon">face</i>
+                        </div>
+
+                        <div class="view back-view">
+                            <img src="./public/img/img4.png" alt="card-img">
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="view front-view">
+                            <i class="icon">face</i>
+                        </div>
+
+                        <div class="view back-view">
+                            <img src="./public/img/img5.png" alt="card-img">
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="view front-view">
+                            <i class="icon">face</i>
+                        </div>
+
+                        <div class="view back-view">
+                            <img src="./public/img/img6.png" alt="card-img">
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="view front-view">
+                            <i class="icon">face</i>
+                        </div>
+
+                        <div class="view back-view">
+                            <img src="./public/img/img7.png" alt="card-img">
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="view front-view">
+                            <i class="icon">face</i>
+                        </div>
+
+                        <div class="view back-view">
+                            <img src="./public/img/img8.png" alt="card-img">
+                        </div>
+                    </li>
+                </ul>
+            </section>
         </div>
-    </section>
-    <section id="facile" class="fermer">
-        <div id="nom"></div>
-        <div id="game"></div>
-    </section>
-
-    <section id="moyen" class="fermer">
-        <div id="game2"></div>
-    </section>
-
-    <section id="difficile" class="fermer">
-        <div id="nom"></div>
-        <div id="game"></div>
-    </section> -->
- 
-    <section id="terrain">
-        <ul id="cards">
-            <li class="card">
-                <div class="view front-view">
-                    <i class="icon">face</i>
-                </div>
-
-                <div class="view back-view">
-                    <img src="./public/img/img1.png" alt="card-img">
-                </div>
-            </li>
-            <li class="card">
-                <div class="view front-view">
-                    <i class="icon">face</i>
-                </div>
-
-                <div class="view back-view">
-                    <img src="./public/img/img2.png" alt="card-img">
-                </div>
-            </li>
-            <li class="card">
-                <div class="view front-view">
-                    <i class="icon">face</i>
-                </div>
-
-                <div class="view back-view">
-                    <img src="./public/img/img3.png" alt="card-img">
-                </div>
-            </li>
-            <li class="card">
-                <div class="view front-view">
-                    <i class="icon">face</i>
-                </div>
-
-                <div class="view back-view">
-                    <img src="./public/img/img4.png" alt="card-img">
-                </div>
-            </li>
-            <li class="card">
-                <div class="view front-view">
-                    <i class="icon">face</i>
-                </div>
-
-                <div class="view back-view">
-                    <img src="./public/img/img5.png" alt="card-img">
-                </div>
-            </li>
-            <li class="card">
-                <div class="view front-view">
-                    <i class="icon">face</i>
-                </div>
-
-                <div class="view back-view">
-                    <img src="./public/img/img6.png" alt="card-img">
-                </div>
-            </li>
-            <li class="card">
-                <div class="view front-view">
-                    <i class="icon">face</i>
-                </div>
-
-                <div class="view back-view">
-                    <img src="./public/img/img7.png" alt="card-img">
-                </div>
-            </li>
-            <li class="card">
-                <div class="view front-view">
-                    <i class="icon">face</i>
-                </div>
-
-                <div class="view back-view">
-                    <img src="./public/img/img8.png" alt="card-img">
-                </div>
-            </li>
-            <li class="card">
-                <div class="view front-view">
-                    <i class="icon">face</i>
-                </div>
-
-                <div class="view back-view">
-                    <img src="./public/img/img2.png" alt="card-img">
-                </div>
-            </li>
-            <li class="card">
-                <div class="view front-view">
-                    <i class="icon">face</i>
-                </div>
-
-                <div class="view back-view">
-                    <img src="./public/img/img1.png" alt="card-img">
-                </div>
-            </li>
-            <li class="card">
-                <div class="view front-view">
-                    <i class="icon">face</i>
-                </div>
-
-                <div class="view back-view">
-                    <img src="./public/img/img3.png" alt="card-img">
-                </div>
-            </li>
-            <li class="card">
-                <div class="view front-view">
-                    <i class="icon">face</i>
-                </div>
-
-                <div class="view back-view">
-                    <img src="./public/img/img4.png" alt="card-img">
-                </div>
-            </li>
-            <li class="card">
-                <div class="view front-view">
-                    <i class="icon">face</i>
-                </div>
-
-                <div class="view back-view">
-                    <img src="./public/img/img5.png" alt="card-img">
-                </div>
-            </li>
-            <li class="card">
-                <div class="view front-view">
-                    <i class="icon">face</i>
-                </div>
-
-                <div class="view back-view">
-                    <img src="./public/img/img6.png" alt="card-img">
-                </div>
-            </li>
-            <li class="card">
-                <div class="view front-view">
-                    <i class="icon">face</i>
-                </div>
-
-                <div class="view back-view">
-                    <img src="./public/img/img7.png" alt="card-img">
-                </div>
-            </li>
-            <li class="card">
-                <div class="view front-view">
-                    <i class="icon">face</i>
-                </div>
-
-                <div class="view back-view">
-                    <img src="./public/img/img8.png" alt="card-img">
-                </div>
-            </li>
-        </ul>
     </section>
 
 

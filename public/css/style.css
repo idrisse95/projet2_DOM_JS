@@ -1,9 +1,126 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "jeux";
+  src: url(../css/LoveGlitchPersonalUseRegular-vmEyA.ttf);
+}
 body {
-  background: #6589F9;
+  margin: 0;
+  font-family: "jeux";
+  background: rgb(126, 111, 111);
+}
+
+#total {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+#acceuil {
+  margin-top: 30px;
+  position: relative;
+  padding-inline: 50px;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 7px;
+  color: white;
+  border: 10px inset rgba(186, 186, 186, 0.85);
+  border-radius: 0px 40px 0px 40px;
+}
+#acceuil li {
+  margin-top: 100px;
+  font-size: 27px;
+}
+#acceuil li:first-child {
+  font-size: 45px;
+}
+
+#niveau {
+  width: 1000px;
+  height: 550px;
+  text-align: center;
+  transition: 0.8s ease-in-out;
+}
+#niveau h2 {
+  font-size: 40px;
+  font-weight: 300;
+}
+
+.contenuNiveau {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+  margin-top: 100px;
+}
+.contenuNiveau #faci {
+  background: url(../../public/img/Capture\ d’écran\ 2023-01-21\ 195931.png) no-repeat;
+  background-size: 100%;
+  width: 400px;
+  height: 300px;
+  transition: 0.3s;
+  font-weight: bold;
+  font-size: 20px;
+  padding-top: 20px;
+  filter: brightness(50%);
+}
+.contenuNiveau #faci:hover {
+  filter: unset;
+  transform: scale(2);
+}
+.contenuNiveau #diff {
+  background: url(../../public/img/DIFFICILE.png) no-repeat;
+  background-size: 100%;
+  width: 400px;
+  height: 300px;
+  transition: 0.3s;
+  filter: brightness(50%);
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  padding-top: 20px;
+}
+.contenuNiveau #diff:hover {
+  filter: unset;
+  transform: scale(2);
+}
+
+.point {
+  transform: translateY(0) !important;
+  transition: 0.4s ease-in-out;
+}
+
+#point {
+  width: 90%;
+  padding-block: 10px;
+  background-color: rgba(255, 255, 255, 0.56);
+  position: absolute;
+  left: 2%;
+  padding-inline: 50px;
+  font-size: 45px;
+  top: 0;
+  transition: 0.8s ease-in-out;
+  transform: translateY(-100%);
+}
+#point ul {
+  display: flex;
+  justify-content: space-between;
+}
+#point #Times {
+  padding-top: 10px;
+  text-align: center;
+}
+
+#facile {
+  text-align: center;
+  font-size: 30px;
+  position: absolute;
+  top: 20%;
+  left: 33%;
 }
 
 ul {
@@ -13,16 +130,44 @@ ul {
 }
 
 img {
-  width: 70px;
-  height: 70px;
+  width: 150px;
+  height: 100px;
 }
 
 #terrain {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.082);
+  box-shadow: 10px 12px 10px rgba(0, 0, 0, 0.205), 10px 12px 10px rgba(0, 0, 0, 0.205);
   height: 500px;
   width: 500px;
   border-radius: 10px;
   padding: 20px;
+}
+
+#terrain2 {
+  margin-top: 150px;
+  background-color: rgba(255, 255, 255, 0.631);
+  height: 400px;
+  width: 450px;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 200px;
+}
+#terrain2 #cards .card {
+  flex-direction: column;
+  justify-content: unset;
+  display: flex;
+  align-items: unset;
+  justify-content: unset;
+  margin: 5px;
+  position: relative;
+  perspective: 800px;
+  transform-style: preserve-3d;
+  height: calc(35% - 10px);
+  width: calc(25% - 10px);
+}
+#terrain2 #cards .card .view {
+  border-radius: 50%;
+  background-color: rgba(117, 222, 196, 0.883);
 }
 
 #cards {
@@ -54,7 +199,7 @@ img {
       -ms-user-select: none;
           user-select: none;
   pointer-events: none;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(175, 158, 158, 0.011);
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
   position: absolute;
@@ -67,7 +212,7 @@ img {
   opacity: 1;
 }
 #cards .card .back-view {
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0);
   opacity: 0;
   transform: rotateY(-180deg);
   transition: transform 0.25s linear;
@@ -157,4 +302,101 @@ img {
   90% {
     transform: scale(0.7);
   }
+}
+.su {
+  color: red;
+}
+
+.fantasy {
+  -webkit-animation: fantasy ease-in-out 4.5s infinite;
+          animation: fantasy ease-in-out 4.5s infinite;
+}
+
+.fantasyBack {
+  background: url(../../public/img/fantasy.jpg) no-repeat;
+  background-size: cover;
+}
+
+@-webkit-keyframes fantasy {
+  0% {
+    background-color: rgba(145, 74, 7, 0.649);
+  }
+  50% {
+    background-color: rgba(49, 187, 246, 0.599);
+  }
+  100% {
+    background-color: rgba(10, 95, 10, 0.633);
+  }
+}
+
+@keyframes fantasy {
+  0% {
+    background-color: rgba(145, 74, 7, 0.649);
+  }
+  50% {
+    background-color: rgba(49, 187, 246, 0.599);
+  }
+  100% {
+    background-color: rgba(10, 95, 10, 0.633);
+  }
+}
+.horror {
+  -webkit-animation: horror 1s ease-in-out infinite;
+          animation: horror 1s ease-in-out infinite;
+}
+
+@-webkit-keyframes horror {
+  0% {
+    background: url(../../public/img/35.jpg) no-repeat;
+    background-size: cover;
+  }
+  50% {
+    background: url(../../public/img/3596.jpg) no-repeat;
+    background-size: cover;
+  }
+  100% {
+    background: url(../../public/img/456839.jpg) no-repeat;
+    background-size: cover;
+  }
+}
+
+@keyframes horror {
+  0% {
+    background: url(../../public/img/35.jpg) no-repeat;
+    background-size: cover;
+  }
+  50% {
+    background: url(../../public/img/3596.jpg) no-repeat;
+    background-size: cover;
+  }
+  100% {
+    background: url(../../public/img/456839.jpg) no-repeat;
+    background-size: cover;
+  }
+}
+.ouvrir {
+  transform: translateX(0%) !important;
+  transition: 0.8s ease-in-out;
+}
+
+.fermer {
+  transform: translateX(-250%);
+  transition: 0.8s ease-in-out;
+}
+
+.position {
+  position: absolute;
+  top: 100px;
+}
+
+.position2 {
+  position: absolute;
+  left: 35%;
+  top: 70px;
+}
+
+.position3 {
+  position: absolute;
+  top: 150px;
+  left: 33%;
 }
