@@ -1,5 +1,6 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 
 <head>
     <meta charset="utf-8">
@@ -10,6 +11,9 @@
 
     <link rel="stylesheet" href="./public/css/style.css">
 
+   
+    <link rel="icon" type="image/png" sizes="32x32" href="./public/img/img2/img1.png">
+  
 
 </head>
 
@@ -20,12 +24,12 @@
             <section id="acceuil">
                 <div>
                     <ul>
-                        <li>Bonjour Bienvenu Sur Mon Jeux Top du Top</li>
+                        <li id="titre">Bonjour Bienvenu Sur Mon Jeux Top du Top</li>
 
                         <li>Entre un pseudo</li>
 
                         <li><input id="inputPseudo" type="text"> <button id="chekInput">Chekkk</button></li>
-                     
+
 
                         <li id="score"></li>
 
@@ -53,8 +57,8 @@
                     <div>
                         <ul>
                             <li id="pseudoKr">Pseudo:</li>
-                            <li id="pointKr">Point:</li>
-                            <li>Coups:</li>
+                            <li id="pointKr">Point: <p id="moi"></p></li>
+                            <li id="coup"></li>
                         </ul>
                     </div>
                     <div id="Times">Temps Restant:</div>
@@ -62,6 +66,18 @@
             </section>
 
             <section id="terrain2" class="position2 fermer">
+                <div id="fini2"><ul>
+                    <li>Bien Jouéé tu as fini</li>
+                    <li><button id="buttonNiv2">Revenir a la page des niveau</button></li>
+                    <li id="rejouer2">Rejouer?</li>
+                </ul></div>
+                <div id="perdu2">
+                    <ul>
+                        <li>Tu as échouer ! </li>
+                        <li id="perduB2">Cliquer ici pour revenir a l'acceuil</li>
+                    </ul>
+                </div>
+               
                 <ul id="cards">
                     <li class="card">
                         <div class="view front-view">
@@ -140,6 +156,17 @@
             </section>
 
             <section id="terrain" class="position3 fermer">
+                <div id="fini"><ul>
+                    <li>Bien Jouéé tu as fini Boy</li>
+                    <li><button id="buttonNiv">Revenir a la page des niveau</button></li>
+                    <li id="rejouer">Rejouer?</li>
+                </ul></div>
+                <div id="perdu">
+                    <ul>
+                        <li>Coup épuiser ! </li>
+                        <li id="perduB">Cliquer ici pour rejouer</li>
+                    </ul>
+                </div>
                 <ul id="cards">
                     <li class="card">
                         <div class="view front-view">
