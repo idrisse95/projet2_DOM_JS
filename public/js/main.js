@@ -71,26 +71,24 @@
  let perduB = document.getElementById('perduB')
  // la je fait une function pour voir si ça match
  let epuiser = 0
+ let coupP =  parseInt(epuiser)
  // la je fait une function pour voir si ça match
 
  function memeCarte(srcImg1, srcImg2) {
    if (srcImg1 != srcImg2) {
-     epuiser++
-     coup.innerHTML = "Epuiser: " + parseInt(epuiser) + "Coup: 20"
-     if (epuiser == 20) {
+     coupP++
+     coup.innerHTML = "Epuiser: " + coupP + "Coup: 20"
+     if (coupP == 20) {
        perdu.classList.add('perdu')
        perduB.addEventListener('click', () => {
-         perdu.classList.remove('perdu')
-
-
-         remettreCarte()
+        location.reload()
        })
      }
    }
    if (srcImg1 === srcImg2) {
      //Je donne 400ms avant d'executer SI les src son pareil
      match++
-     pointP.innerHTML += parseInt('1')
+     pointP.innerHTML = "Point: " + parseInt(match)
      console.log(match);
      setTimeout(() => {
        if (match == 8) {
@@ -98,7 +96,7 @@
 
          fini.classList.add('scaleFini')
          rejouer.addEventListener('click', () => {
-           fini.classList.remove('scaleFini')
+           location.reload()
          })
          buttonNiv.addEventListener('click', () => {
            terrain.classList.remove('ouvrir')
@@ -269,21 +267,20 @@
  let perduB2 = document.getElementById('perduB2')
  // la je fait une function pour voir si ça match
  let epuiser2 = 0
- let coupP = parseInt(epuiser2)
+ let coupP2 = parseInt(epuiser2)
 
  function memeCarte2(srcImg12, srcImg22) {
    if (srcImg12 != srcImg22) {
-     coupP++
-     coup.innerHTML = "Epuiser: " + coupP + "Coup: 10"
-     if (coupP == 4) {
+     coupP2++
+     coup.innerHTML = "Epuiser: " + coupP2 + "Coup: 10"
+     if (coupP2 == 10) {
        // coup.innerHTML = "Epuiser: " - coupP + "coup :10"
+       
        perdu2.classList.add('perdu2')
+
        perduB2.addEventListener('click', () => {
-         perdu2.classList.remove('perdu2')
-         //  pointP.innerHTML = -parseInt(match2)
-         //  coup.innerHTML = parseInt(epuiser2)
-         //  parseInt(epuiser2) == 0
-         remettreCarte2()
+         location.reload()
+         
        })
      }
 
@@ -294,11 +291,14 @@
      pointP.innerHTML = "Point: " + parseInt(match2)
      console.log(match2);
      setTimeout(() => {
+
        if (match2 == 4) {
+        temp.textContent= "tu as fini en: "+seconde+"seconde"
+      
          console.log(match2);
          fini2.classList.add('scaleFini2')
          rejouer2.addEventListener('click', () => {
-           fini2.classList.remove('scaleFini2')
+           location.reload()
          })
          buttonNiv2.addEventListener('click', () => {
            terrain2.classList.remove('ouvrir')
@@ -419,33 +419,42 @@
 //  },1000)
 
 let temp = document.getElementById('Times')
-let seconde = 25
-let o =  25
+let seconde = 0
+let o =  seconde
+
 function times(){
-
-    
+ 
+if(match2<3){
+  setInterval(() => {
+    temp.textContent ="Temp: "+ seconde++
+  }, 1000);
   
-   
+      
+  
+} 
+
+
+
   
 
 
-  do {
-    setInterval(() => {
-       temp.textContent = seconde-1
-      seconde--
-      if (seconde<1) {
-        temp.textContent = "fin"
-        perdu2.classList.add('perdu2')
-        perdu.classList.add('perdu')
-        perduB.addEventListener('click',()=>{
-          location.reload()
-        })
-        perduB2.addEventListener('click', () => {
+  // do {
+  //   setInterval(() => {
+  //      temp.textContent = seconde-1
+  //     seconde--
+  //     if (seconde<1) {
+  //       temp.textContent = "fin"
+  //       perdu2.classList.add('perdu2')
+  //       perdu.classList.add('perdu')
+  //       perduB.addEventListener('click',()=>{
+  //         location.reload()
+  //       })
+  //       perduB2.addEventListener('click', () => {
   
-          location.reload()
+  //         location.reload()
           
-      })}}, 1000);
-  } while (seconde>Math.floor());
+  //     })}}, 1000);
+  // } while (seconde>Math.floor());
  
 
 
