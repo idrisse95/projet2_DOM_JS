@@ -41,20 +41,22 @@
  function flipCarte(e) {
    //cliquer sur la carte
    let cliquer = e.target
+   console.log(cliquer);
    //'!==' signifie different de ... et OU égale à
-   // dans le iff je dit qu'il prend en compte qu'un seul clique sur la meme carte
+   // dans le iff je dit qu'il prend en compte qu'un seul clique sur la meme carte 
    if (cliquer !== carteUn && !desactive) {
+    //lorsque le clique es fait la carte flip
      cliquer.classList.add('flip')
-     //return la carte qui a té cliquer au premier clique
 
+     //return la carte qui a té cliquer au premier clique Pour ne pas faire flipper la carte encore
      if (!carteUn) {
        return carteUn = cliquer
      }
 
      carteD = cliquer
-     //la les clique sont activer car on a pas encore ft de comparaison
+     //la les clique sont desactiver le temp de la comparaison donc 400 ms 
      desactive = true;
-     //une genre de comparaison des src puis seront appeler 
+     //une comparaison des src puis seront appeler 
      let premiereImg = carteUn.querySelector('img').src
      deuxiemeImg = carteD.querySelector('img').src
      //j'appel la fonction et je met en parametre les deux carte cliquer(leur src d'img)
@@ -66,22 +68,23 @@
 
  }
 
- let back = document.querySelectorAll('#cards .card .back-view')
+ let back = document.querySelectorAll('#cards .card .dos')
  let perdu = document.getElementById('perdu')
  let perduB = document.getElementById('perduB')
  // la je fait une function pour voir si ça match
  let epuiser = 0
- let coupP =  parseInt(epuiser)
+ let coupP = parseInt(epuiser)
  // la je fait une function pour voir si ça match
 
  function memeCarte(srcImg1, srcImg2) {
    if (srcImg1 != srcImg2) {
      coupP++
      coup.innerHTML = "Epuiser: " + coupP + "Coup: 20"
+     
      if (coupP == 20) {
        perdu.classList.add('perdu')
        perduB.addEventListener('click', () => {
-        location.reload()
+         location.reload()
        })
      }
    }
@@ -93,7 +96,7 @@
      setTimeout(() => {
        if (match == 8) {
 
-
+         stop()
          fini.classList.add('scaleFini')
          rejouer.addEventListener('click', () => {
            location.reload()
@@ -114,6 +117,7 @@
        //les carte en opacity 0 pour quel soit fantome et donc ft en sorte que les autres gardent leur place
        carteUn.style.opacity = "0";
        carteD.style.opacity = "0";
+       //retire la methode qui retourne la carte
        carteUn.removeEventListener('click', flipCarte)
        carteD.removeEventListener('click', flipCarte)
        carteUn = carteD = "";
@@ -163,7 +167,7 @@
      //faire reaparaitre les cartes
      element.style.opacity = "1"
      //enlever la class flip pour revoir le devant
-     element.classList.remove('flip')
+     element.classList.remove('flip') 
      let imgTag = element.querySelector('img')
      imgTag.src = `./public/img/img${tab[index]}.png`
      element.addEventListener('click', flipCarte)
@@ -188,6 +192,9 @@
 
 
 
+
+
+//TERRAIN NIVEAU MOYEN
 
 
 
@@ -260,7 +267,7 @@
  }
 
 
- 
+
 
 
  let perdu2 = document.getElementById('perdu2')
@@ -272,15 +279,18 @@
  function memeCarte2(srcImg12, srcImg22) {
    if (srcImg12 != srcImg22) {
      coupP2++
+     if (coupP2 == 4) {
+      alert('concentre toi petit')
+     }
      coup.innerHTML = "Epuiser: " + coupP2 + "Coup: 10"
      if (coupP2 == 10) {
        // coup.innerHTML = "Epuiser: " - coupP + "coup :10"
-       
+
        perdu2.classList.add('perdu2')
 
        perduB2.addEventListener('click', () => {
          location.reload()
-         
+
        })
      }
 
@@ -293,8 +303,8 @@
      setTimeout(() => {
 
        if (match2 == 4) {
-        temp.textContent= "tu as fini en: "+seconde+"seconde"
-      
+         stop()
+
          console.log(match2);
          fini2.classList.add('scaleFini2')
          rejouer2.addEventListener('click', () => {
@@ -410,56 +420,66 @@
 
 
  //TEMP RESTANT
-// let countDate = new Date("00").getTime();
-// let x = setInterval(function timesJ() {
-//   let current = new Date().getTime();
-//   let distance = countDate - current
-//   let seconde = Math.floor((distance%(1000 * 60))/1000)
-//   document.getElementById('Times').innerHTML+=seconde
-//  },1000)
+ // let countDate = new Date("00").getTime();
+ // let x = setInterval(function timesJ() {
+ //   let current = new Date().getTime();
+ //   let distance = countDate - current
+ //   let seconde = Math.floor((distance%(1000 * 60))/1000)
+ //   document.getElementById('Times').innerHTML+=seconde
+ //  },1000)
 
-let temp = document.getElementById('Times')
-let seconde = 0
-let o =  seconde
+ let temp = document.getElementById('Times')
 
-function times(){
- 
-if(match2<3){
-  setInterval(() => {
-    temp.textContent ="Temp: "+ seconde++
-  }, 1000);
-  
-      
-  
-} 
+ let debut;
+ let fin;
+ let seconde = 0
 
-
-
-  
-
-
-  // do {
+ function start() {
+   debut = new Date().getTime(); 
+  //  if(match2<3){
   //   setInterval(() => {
-  //      temp.textContent = seconde-1
-  //     seconde--
-  //     if (seconde<1) {
-  //       temp.textContent = "fin"
-  //       perdu2.classList.add('perdu2')
-  //       perdu.classList.add('perdu')
-  //       perduB.addEventListener('click',()=>{
-  //         location.reload()
-  //       })
-  //       perduB2.addEventListener('click', () => {
-  
-  //         location.reload()
-          
-  //     })}}, 1000);
-  // } while (seconde>Math.floor());
- 
+  //     temp.textContent ="Temp: "+ seconde++
+  //   }, 1000);}
+ }
 
 
 
-}
+
+
+
+ function stop() {
+   fin = new Date().getTime();
+   seconde = (fin - debut) / 1000;
+   temp.textContent = "tu as fini en: " + seconde + "seconde"
+ }
+
+
+
+
+
+
+
+ // do {
+ //   setInterval(() => {
+ //      temp.textContent = seconde-1
+ //     seconde--
+ //     if (seconde<1) {
+ //       temp.textContent = "fin"
+ //       perdu2.classList.add('perdu2')
+ //       perdu.classList.add('perdu')
+ //       perduB.addEventListener('click',()=>{
+ //         location.reload()
+ //       })
+ //       perduB2.addEventListener('click', () => {
+
+ //         location.reload()
+
+ //     })}}, 1000);
+ // } while (seconde>Math.floor());
+
+
+
+
 
 
 
@@ -482,7 +502,7 @@ if(match2<3){
    terrain2.classList.add('ouvrir', 'fantasy')
    total.classList.add('fantasyBack')
    point.classList.add('point')
-   times()
+   start()
 
  })
 
@@ -491,6 +511,6 @@ if(match2<3){
    total.classList.add('horror')
    point.classList.add('point')
    terrain.classList.add('ouvrir')
-   times()
+   start()
 
  })

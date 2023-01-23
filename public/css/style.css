@@ -344,36 +344,36 @@ img {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
-#cards .card .front-view {
+#cards .card .face {
   font-size: 25px;
   transition: transform 0.25s linear;
   opacity: 1;
 }
-#cards .card .back-view {
+#cards .card .dos {
   background-color: rgba(255, 255, 255, 0);
   opacity: 0;
   transform: rotateY(-180deg);
   transition: transform 0.25s linear;
 }
-#cards .card .back-view img {
+#cards .card .dos img {
   max-width: 45px;
 }
 
-#cards .card.flip .front-view {
+#cards .card.flip .face {
   transform: rotateY(180deg);
   opacity: 0;
 }
 
-#cards .card.flip .back-view {
+#cards .card.flip .dos {
   opacity: 1;
   transform: rotateY(0);
 }
 
-#cards .card .back-view.rouge {
+#cards .card .dos.rouge {
   background-color: red;
 }
 
-#cards .card .back-view.vert {
+#cards .card .dos.vert {
   background-color: rgb(8, 138, 8);
 }
 
